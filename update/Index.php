@@ -10,11 +10,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/materialize.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/materialize.js"></script>
+    <script type="text/javascript" src="js/materialize.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -58,15 +58,45 @@
             <ul class="list-group" id="side_ul">
                 <li class="list-group-item"><a href="index.php">Home</a></li>
                 <li class="list-group-item"><a href="../view/index.php">View Requests</a></li>
-                <li class="list-group-item"><a href="../send/index.php">Supply Reinforcement</a></li>
-                <li class="list-group-item"><a href="../update/Index.php">Update Reinforcement</a></li>
-                <li class="list-group-item"><a href="../show/index.php">Show</a></li>
+                <li class="list-group-item"><a href="../view/index.php">Supply Reinforcement</a></li>
+                <li class="list-group-item"><a href="./members/index.php">uifhxzdfg</a></li>
+
             </ul>
         </div>
         <div class="col-sm-9 text-left">
             <!--actual content-->
 
-            <p>basecamp</p>
+            <form action="../php/Update.php" method="post">
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="email">Troops</label>
+                        <input type="text" name="troops" class="form-control" id="email" placeholder="No. Of Troops">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="pass">Weapon</label>
+                        <input type="text" name="weapon" class="form-control" id="pass" placeholder="No. Of Weapon">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="pass">Food</label>
+                        <input type="text" name="food" class="form-control" id="pass" placeholder="Total Food">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="email">Fuel</label>
+                        <input type="text" name="fuel" class="form-control" id="email" placeholder="Fuel Tank">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="pass">Water</label>
+                        <input type="text" name="water" class="form-control" id="pass" placeholder="Amount Of Water Gallon">
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary right" style="float: right;">Update</button>
+            </form>
 
 
         </div>
@@ -125,4 +155,5 @@ if (!empty($_SESSION)){
 
 </body>
 </html>
+
 

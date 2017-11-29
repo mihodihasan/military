@@ -10,11 +10,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/materialize.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/materialize.js"></script>
+    <script type="text/javascript" src="js/materialize.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -58,16 +58,43 @@
             <ul class="list-group" id="side_ul">
                 <li class="list-group-item"><a href="index.php">Home</a></li>
                 <li class="list-group-item"><a href="../view/index.php">View Requests</a></li>
-                <li class="list-group-item"><a href="../send/index.php">Supply Reinforcement</a></li>
-                <li class="list-group-item"><a href="../update/Index.php">Update Reinforcement</a></li>
-                <li class="list-group-item"><a href="../show/index.php">Show</a></li>
+                <li class="list-group-item"><a href="../view/index.php">Supply Reinforcement</a></li>
+                <li class="list-group-item"><a href="./members/index.php">uifhxzdfg</a></li>
+
             </ul>
         </div>
         <div class="col-sm-9 text-left">
             <!--actual content-->
+            <h3>Reinforcement</h3>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Troops</th>
+                    <th>Food</th>
+                    <th>Fuel</th>
+                    <th>Weapon</th>
+                    <th>Water</th>
+                </tr>
+                </thead>
+                <tbody>
 
-            <p>basecamp</p>
 
+                <?php
+                include '../php/connection.php';
+                $sql="SELECT * FROM storage WHERE type='0';";
+                $result=mysqli_query($con,$sql);
+                while($row=mysqli_fetch_assoc($result)){ ?>
+                <tr>
+                    <td><?php echo $row['troops'];?></td>
+                    <td><?php echo $row['food'];?></td>
+                    <td><?php echo $row['fuel'];?></td>
+                    <td><?php echo $row['wapon'];?></td>
+                    <td><?php echo $row['water'];?></td>
+                    <?php }
+                    ?>
+
+                </tbody>
+            </table>
 
         </div>
     </div>
@@ -125,4 +152,5 @@ if (!empty($_SESSION)){
 
 </body>
 </html>
+
 
