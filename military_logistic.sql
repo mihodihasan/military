@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 28, 2017 at 07:08 PM
+-- Generation Time: Nov 29, 2017 at 05:25 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -62,8 +62,7 @@ CREATE TABLE `request` (
 --
 
 INSERT INTO `request` (`id`, `wapon`, `food`, `troops`, `water`, `fuel`) VALUES
-(1, 45, 100, 12, 223, 230),
-(2, 65, 78, 56, 45, 12);
+(5, 50, 50, 50, 50, 50);
 
 -- --------------------------------------------------------
 
@@ -86,7 +85,8 @@ CREATE TABLE `storage` (
 --
 
 INSERT INTO `storage` (`id`, `wapon`, `food`, `troops`, `water`, `fuel`, `type`) VALUES
-(1, 450, 800, 500, 900, 100, 0);
+(1, 1350, 1700, 1400, 1800, 1000, 0),
+(2, 1150, 1150, 1150, 1150, 1150, 1);
 
 -- --------------------------------------------------------
 
@@ -165,13 +165,13 @@ ALTER TABLE `front_line`
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `storage`
 --
 ALTER TABLE `storage`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`

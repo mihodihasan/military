@@ -1,6 +1,8 @@
 <?php
 session_start();
-
+if(!$_SESSION['is_login']){
+    header('Location: ../index.php?toast=t&status=You are not authorized.');
+}
 ?>
 
 <!DOCTYPE html>
@@ -29,15 +31,12 @@ session_start();
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="#">Who We Are</a></li>
-                <li><a href="#">Certifications</a></li>
-                <li><a href="#">Contact</a></li>
+
             </ul>
 
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="signup/index.html"><span class="glyphicon glyphicon-log-in"></span>Sign up</a></li>
+
             </ul>
             <div id="myloginbtn" class="navbar-right">
                 <form method="post" action="php/login.php" class="navbar-form navbar-right">
@@ -56,10 +55,8 @@ session_start();
     <div class="row content">
         <div class="col-sm-3 sidenav">
             <ul class="list-group" id="side_ul">
-                <li class="list-group-item"><a href="index.php">Home</a></li>
-                <li class="list-group-item"><a href="./request/index.php">jbhvvjhvj</a></li>
-                <li class="list-group-item"><a href="./view/index.php">kjhvhjfhxdgzx</a></li>
-                <li class="list-group-item"><a href="./members/index.php">uifhxzdfg</a></li>
+
+
 
             </ul>
         </div>
@@ -113,7 +110,7 @@ session_start();
 <?php
 if(!empty($_SESSION)){ ?>
     <script type='text/javascript'>
-        document.getElementById('myloginbtn').innerHTML="<a href=\"php/logout.php\" class=\"navbar-brand\">Logout,<?php echo $_SESSION['name'];?></a>";
+        document.getElementById('myloginbtn').innerHTML="<a href=\"../php/logout.php\" class=\"navbar-brand\">Logout,<?php echo $_SESSION['name'];?></a>";
     </script>
 <?php }
 ?>

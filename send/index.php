@@ -1,6 +1,9 @@
 <?php
+session_start();
+if(!$_SESSION['is_login']){
+    header('Location: ../index.php?toast=t&status=You are not authorized.');
+}
 ?>
-
 
 
 <!DOCTYPE html>
@@ -10,11 +13,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/materialize.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/materialize.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/materialize.js"></script>
+    <script type="text/javascript" src="../js/materialize.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -29,15 +32,12 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="#">Who We Are</a></li>
-                <li><a href="#">Certifications</a></li>
-                <li><a href="#">Contact</a></li>
+
             </ul>
 
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="signup/index.html"><span class="glyphicon glyphicon-log-in"></span>Sign up</a></li>
+
             </ul>
             <div id="myloginbtn" class="navbar-right">
                 <form method="post" action="php/login.php" class="navbar-form navbar-right">
@@ -56,10 +56,10 @@
     <div class="row content">
         <div class="col-sm-3 sidenav">
             <ul class="list-group" id="side_ul">
-                <li class="list-group-item"><a href="index.php">Home</a></li>
+
                 <li class="list-group-item"><a href="../view/index.php">View Requests</a></li>
                 <li class="list-group-item"><a href="../view/index.php">Supply Reinforcement</a></li>
-                <li class="list-group-item"><a href="./members/index.php">uifhxzdfg</a></li>
+
 
             </ul>
         </div>
@@ -113,7 +113,7 @@
 <?php
 if(!empty($_SESSION)){ ?>
     <script type='text/javascript'>
-        document.getElementById('myloginbtn').innerHTML="<a href=\"php/logout.php\" class=\"navbar-brand\">Logout,<?php echo $_SESSION['name'];?></a>";
+        document.getElementById('myloginbtn').innerHTML="<a href=\"../php/logout.php\" class=\"navbar-brand\">Logout,<?php echo $_SESSION['name'];?></a>";
     </script>
 <?php }
 ?>
