@@ -20,7 +20,7 @@ if(!$_SESSION['is_login']){
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/materialize.js"></script>
 </head>
-<body>
+<body style="background-image:url('../images/slider4.jpg');background-repeat: no-repeat;background-size: cover;">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -66,10 +66,11 @@ if(!$_SESSION['is_login']){
         </div>
         <div class="col-sm-9 text-left">
             <!--actual content-->
-
-            <p>basecamp</p>
-
-
+            <center>
+                <h2 style="color: red;">
+                    Welcome To BaseCamp
+                </h2>
+            </center>
         </div>
     </div>
 </div>

@@ -5,6 +5,10 @@ if(!$_SESSION['is_login']){
 }
 ?>
 
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,40 +66,48 @@ if(!$_SESSION['is_login']){
         </div>
         <div class="col-sm-9 text-left">
             <!--actual content-->
-
-            <h3>Requests</h3>
-
-            <table class="table table-hover">
-                <thead>
-                <tr>
-                    <th>Troops</th>
-                    <th>Food</th>
-                    <th>Fuel</th>
-                    <th>Weapon</th>
-                    <th>Water</th>
-                    <th>Delete</th>
-                </tr>
-                </thead>
-                <tbody>
-
-
-                <?php
+            <?php
+                $sql="SELECT * FROM storage WHERE type='1';";
                 include '../php/connection.php';
-                $sql='SELECT * FROM request;';
                 $result=mysqli_query($con,$sql);
-                while($row=mysqli_fetch_assoc($result)){ ?>
-                <tr>
-                    <td><?php echo $row['troops'];?></td>
-                    <td><?php echo $row['food'];?></td>
-                    <td><?php echo $row['fuel'];?></td>
-                    <td><?php echo $row['wapon'];?></td>
-                    <td><?php echo $row['water'];?></td>
-                    <td><a href="../php/delete.php?id=<?php echo $row['id'];?>&troops=<?php echo $row['troops'];?>&food=<?php echo $row['food'];?>&water=<?php echo $row['water'];?>&weapon=<?php echo $row['wapon'];?>&fuel=<?php echo $row['fuel'];?>">Supply</a></td>
-                    <?php }
-                    ?>
+            $row=mysqli_fetch_assoc($result);
+               ?>
 
-                </tbody>
-            </table>
+
+
+            <form action="../php/updateReinf.php" method="post">
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="email">Troops</label>
+                        <input type="text" name="troops" class="form-control" id="email" placeholder="<?php echo $row['troops'].' Troops Available';?>">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="pass">Weapon</label>
+                        <input type="text" name="weapon" class="form-control" id="pass" placeholder="<?php echo $row['wapon'].' Weapon Available';?>">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="pass">Food</label>
+                        <input type="text" name="food" class="form-control" id="pass" placeholder="<?php echo $row['food'].' Foods Available';?>">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="email">Fuel</label>
+                        <input type="text" name="fuel" class="form-control" id="email" placeholder="<?php echo $row['fuel'].' Fuel Available';?>">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="pass">Water</label>
+                        <input type="text" name="water" class="form-control" id="pass" placeholder="<?php echo $row['water'].' Fuel Available';?>">
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary right" style="float: right;">Send</button>
+            </form>
+                <?php
+            ?>
         </div>
     </div>
 </div>
@@ -152,3 +164,6 @@ if (!empty($_SESSION)){
 
 </body>
 </html>
+
+
+

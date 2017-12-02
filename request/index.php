@@ -66,37 +66,48 @@ if(!$_SESSION['is_login']){
         </div>
         <div class="col-sm-9 text-left">
             <!--actual content-->
+            <?php
+            $sql="SELECT * FROM storage WHERE type='1';";
+            include '../php/connection.php';
+            $result=mysqli_query($con,$sql);
+            $row=mysqli_fetch_assoc($result);
+            ?>
+
+
+
             <form action="../php/request.php" method="post">
 
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="email">Troops</label>
-                        <input type="text" name="troops" class="form-control" id="email" placeholder="No. Of Troops">
+                        <input type="text" name="troops" class="form-control" id="email" placeholder="<?php echo $row['troops'].' Troops Available';?>">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="pass">Weapon</label>
-                        <input type="text" name="weapon" class="form-control" id="pass" placeholder="No. Of Weapon">
+                        <input type="text" name="weapon" class="form-control" id="pass" placeholder="<?php echo $row['wapon'].' Weapon Available';?>">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="pass">Food</label>
-                        <input type="text" name="food" class="form-control" id="pass" placeholder="Total Food">
+                        <input type="text" name="food" class="form-control" id="pass" placeholder="<?php echo $row['food'].' Foods Available';?>">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="email">Fuel</label>
-                        <input type="text" name="fuel" class="form-control" id="email" placeholder="Fuel Tank">
+                        <input type="text" name="fuel" class="form-control" id="email" placeholder="<?php echo $row['fuel'].' Fuel Available';?>">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="pass">Water</label>
-                        <input type="text" name="water" class="form-control" id="pass" placeholder="Amount Of Water Gallon">
+                        <input type="text" name="water" class="form-control" id="pass" placeholder="<?php echo $row['water'].' Fuel Available';?>">
                     </div>
 
                 </div>
 
                 <button type="submit" class="btn btn-primary right" style="float: right;">Send</button>
             </form>
+            <?php
+            ?>
         </div>
     </div>
 </div>

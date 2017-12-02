@@ -16,7 +16,7 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/materialize.js"></script>
 </head>
-<body>
+<body style="background-image:url('./images/slider1.jpg');">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -51,18 +51,6 @@ session_start();
 </nav>
 
 <div class="container-fluid text-center">
-    <div class="row content">
-        <div class="col-sm-3 sidenav">
-            <ul class="list-group" id="side_ul">
-
-
-            </ul>
-        </div>
-        <div class="col-sm-9 text-left">
-            <!--actual content-->
-
-        </div>
-    </div>
 </div>
 
 <br><br><br><br><br><br><br>

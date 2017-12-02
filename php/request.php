@@ -9,7 +9,7 @@ VALUES (NULL,'".$_POST['weapon']."','".$_POST['food']."','".$_POST['troops']."',
     include 'connection.php';
     $result=mysqli_query($con,$sql);
     if($result){
-        echo 'success';
+        header("Location: ../frontline/index.php?toast=t&status=Request Sent!");
     }else{
         echo 'failed';
     }
