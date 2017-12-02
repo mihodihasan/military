@@ -1,12 +1,5 @@
 <?php
 session_start();
-//if (isset($_SESSION)){
-//    if ($_SESSION['email']!='admin@blood.com'){
-//        header('Location: ../index.php');
-//    }
-//}else{
-//    header('Location: ../index.php');
-//}
 
 if (!empty($_GET['id'])) {
     include 'connection.php';
